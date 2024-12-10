@@ -9,6 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface PatientRepository extends JpaRepository<Patient,Long> {
-    @EntityGraph(attributePaths = "diseases")
-    Optional<Patient> findById(Long id);
+//    @EntityGraph(attributePaths = "diseases")
+//    Optional<Patient> findById(Long id);
 }
