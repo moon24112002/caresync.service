@@ -1,5 +1,6 @@
 package com.CareSync.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,5 +22,8 @@ public class Disease {
     private String description;
     private String treatment;
 
-
+    @ManyToOne
+    @JoinColumn(name = "patient_id", referencedColumnName = "id")
+    @JsonBackReference
+    private Patient patient;
 }

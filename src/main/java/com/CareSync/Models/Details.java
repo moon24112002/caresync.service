@@ -22,5 +22,4 @@ public class Details {
     private String email;
     private String password;
     private String phone;
-
 }

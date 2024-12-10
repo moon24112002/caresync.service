@@ -13,6 +13,9 @@ public class PatientController {
 
     @PostMapping
     public Patient addPatient(@RequestBody Patient patient){
+        if (patient.getDiseases() != null) {
+            patient.getDiseases().forEach(disease -> disease.setPatient(patient));
+        }
         return patientRepository.save(patient);
     }
 

@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 
 @Data
 @AllArgsConstructor
@@ -27,8 +29,9 @@ public class Patient {
     @JoinColumn(name = "details_id", referencedColumnName = "id")
     private Details details;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "disease_id",referencedColumnName = "id")
-    private Disease disease;
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<Disease> diseases;
+
+
 
 }
