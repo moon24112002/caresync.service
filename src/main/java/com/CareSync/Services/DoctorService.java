@@ -18,7 +18,6 @@ public class DoctorService  implements IDoctorService {
 
     @Override
     public Doctor addDoctor(Doctor doctor) {
-
         return _doctorRepository.save(doctor);
     }
 

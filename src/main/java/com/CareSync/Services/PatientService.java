@@ -19,6 +19,7 @@ public class PatientService implements IPatientService {
     public Patient addPatient(Patient patient) {
         if (patient.getDiseases() != null) {
             patient.getDiseases().forEach(disease -> disease.setPatient(patient));
+
         }
        return  _patientRepository.save(patient);
     }

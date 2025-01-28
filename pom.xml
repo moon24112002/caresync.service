@@ -46,6 +46,32 @@
 			<version>2.2.0</version> <!-- Use the latest version available  http://localhost:8080/swagger-ui/index.html#/ -->
 		</dependency>
 
+<!--		&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.security/spring-security-core &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.security</groupId>-->
+<!--			<artifactId>spring-security-core</artifactId>-->
+<!--			<version>6.4.0</version>-->
+<!--		</dependency>-->
+
+	<!-- Jwt token -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-api</artifactId>
+			<version>0.11.5</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-impl</artifactId>
+			<version>0.11.5</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-jackson</artifactId>
+			<version>0.11.5</version>
+		</dependency>
+
+
+		<!--connecter -->
 
 		<dependency>
 			<groupId>com.mysql</groupId>

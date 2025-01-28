@@ -26,4 +26,8 @@ public class Doctor {
     @OneToOne(cascade =CascadeType.ALL)
     @JoinColumn(name = "qualification_id", referencedColumnName = "id")
     private Qualification qualification;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "slot_details", referencedColumnName = "id")
+    private SlotDetails slotDetails;
 }
