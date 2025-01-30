@@ -5,6 +5,7 @@ import com.CareSync.Models.*;
 import com.CareSync.Models.Qualification;
 import com.CareSync.Repository.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.print.Doc;
@@ -16,17 +17,17 @@ public class DoctorController {
     IDoctorService _doctorService;
 
     @PostMapping
-    public Doctor addDoctor(@RequestBody Doctor doctor){
+    public ResponseEntity<ApiResponse> addDoctor(@RequestBody Doctor doctor){
        return _doctorService.addDoctor(doctor);
     }
 
     @GetMapping("/{id}")
-    public Doctor doctorById(@PathVariable Long id){
+    public ResponseEntity<ApiResponse> doctorById(@PathVariable Long id){
         return _doctorService.DoctorById(id);
     }
 
     @GetMapping
-    public Iterable<Doctor> getAllDoctor(){
+    public ResponseEntity<ApiResponse> getAllDoctor(){
         return _doctorService.getAllDoctor();
     }
 

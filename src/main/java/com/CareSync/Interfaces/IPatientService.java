@@ -1,9 +1,11 @@
 package com.CareSync.Interfaces;
 
+import com.CareSync.Models.ApiResponse;
 import com.CareSync.Models.Patient;
+import org.springframework.http.ResponseEntity;
 
 public interface IPatientService {
-    public Patient addPatient(Patient patient);
-    public Patient PatientById(Long id);
-    public Iterable<Patient> getAllPatient();
+    public ResponseEntity<ApiResponse> addPatient(Patient patient);
+    public ResponseEntity<ApiResponse> PatientById(Long id);
+    public ResponseEntity<ApiResponse> getAllPatient();
 }

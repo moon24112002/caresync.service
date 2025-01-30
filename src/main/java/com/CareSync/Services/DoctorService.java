@@ -2,10 +2,16 @@ package com.CareSync.Services;
 
 
 import com.CareSync.Interfaces.IDoctorService;
+import com.CareSync.Models.ApiResponse;
 import com.CareSync.Models.Doctor;
 import com.CareSync.Repository.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.*;
 
 import java.util.Optional;
 
@@ -17,19 +23,21 @@ public class DoctorService  implements IDoctorService {
 
 
     @Override
-    public Doctor addDoctor(Doctor doctor) {
-        return _doctorRepository.save(doctor);
+    public ResponseEntity<ApiResponse> addDoctor(Doctor doctor) {
+        var res = _doctorRepository.save(doctor);
+        return ResponseEntity.ok(new ApiResponse("success",res));
     }
 
     @Override
-    public Doctor DoctorById(Long id) {
+    public ResponseEntity<ApiResponse> DoctorById(Long id) {
         Optional<Doctor> doctor = _doctorRepository.findById(id);
-        if(doctor.isPresent()) return doctor.get();
+        if(doctor.isPresent()) return ResponseEntity.ok(new ApiResponse("success",doctor));
         return null;
     }
 
     @Override
-    public Iterable<Doctor> getAllDoctor() {
-        return _doctorRepository.findAll();
+    public ResponseEntity<ApiResponse> getAllDoctor() {
+        var res =  _doctorRepository.findAll();
+        return ResponseEntity.ok(new ApiResponse("success",res));
     }
 }

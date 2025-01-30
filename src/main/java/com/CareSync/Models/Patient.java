@@ -15,11 +15,12 @@ import java.util.List;
 @Entity
 @Table(name = "patients")
 public class Patient {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String role;
+    private Long doctorId;
+    private Long slotId;
 
     @OneToOne(cascade =CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
