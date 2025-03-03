@@ -20,7 +20,7 @@ public class Patient {
     private Long id;
     private String role;
     private Long doctorId;
-    private Long slotId;
+    private Long slotId; 
 
     @OneToOne(cascade =CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
